@@ -14,7 +14,7 @@ showPagination: false
 | ------------ | ------------------------------------------ | ------------------------------------- |
 | Yuchan Jeong | [WithBecon](https://www.becon-global.com/) | Korean(Native), English(Intermediate) |
 
-### 👇 Follow me on
+### 👇 Follow me on!
 
 | Contact       | Details                                                        |
 | ------------- | -------------------------------------------------------------- |
