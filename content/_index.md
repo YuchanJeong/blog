@@ -41,7 +41,3 @@ Posts by tag.
 | \\\Company Tag | 회사별로 지정된 태그           |
 | \Project Tag   | 프로젝트별로 지정된 태그       |
 | (Document Tag) | 개발 일지와 회고등의 문서 태그 |
-
-## WIL [📝](/wil)
-
-Summary of studies.
