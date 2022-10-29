@@ -10,7 +10,7 @@ Click the emoji to go to the page!
 
 ## About [👨🏻‍💻](/about)
 
-Information about me.
+Information about me!
 
 ## Posts [📑](/posts)
 
