@@ -3,4 +3,5 @@
 	url = https://github.com/jpanther/congo.git
 [submodule "public"]
 	path = public
-	url = https://github.com/YuchanJeong/yuchanjeong.github.io
+	url = git@github.com:YuchanJeong/yuchanjeong.github.io.git
+	branch = main
