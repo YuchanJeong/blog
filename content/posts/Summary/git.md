@@ -2,9 +2,9 @@
 title: "Git"
 date: 2022-10-31
 categories:
-  - <Summary>
+  - <summary>
 tags:
-  - Git
+  - git
 ---
 
 ## 1) 기본 설정

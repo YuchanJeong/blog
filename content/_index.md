@@ -21,7 +21,7 @@ Previous posts are in [this repository](https://github.com/YuchanJeong/old_blog)
 |           |                                                          |
 | --------- | -------------------------------------------------------- |
 | Name      | Yuchan Jeong                                             |
-| Career    | [WithBecon](https://www.becon-global.com/)(FE Developer) |
+| Work      | [WithBecon](https://www.becon-global.com/)(FE Developer) |
 | Languages | Korean(Native), English(Intermediate)                    |
 
 ### 👇 Follow me on
