@@ -37,6 +37,7 @@ footer.showScrollToTop = true
   showTableOfContents = true
   showTaxonomies = true
   showWordCount = false
+  showComments = true
   # sharingLinks = ["facebook", "twitter", "pinterest", "reddit", "linkedin", "email"]
 
 [list]
