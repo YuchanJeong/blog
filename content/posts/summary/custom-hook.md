@@ -7,12 +7,6 @@ tags:
   - react
 ---
 
-{{< alert "circle-info" >}}
-내가 자주 사용하는 커스텀 훅들을 모아둔 게시물이다.
-{{< /alert >}}
-
-<br/>
-
 <details>
 <summary><strong>useCheckbox.ts</strong></summary>
 <div markdown="1">
