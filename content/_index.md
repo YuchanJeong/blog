@@ -18,11 +18,11 @@ Previous posts are in [this repository](https://github.com/YuchanJeong/old_blog)
 
 <img width="250px" alt="profile" src="/assets/auth/profile.jpg"/>
 
-|           |                                                          |
-| --------- | -------------------------------------------------------- |
-| Name      | Yuchan Jeong                                             |
-| Work      | [WithBecon](https://www.becon-global.com/)(FE Developer) |
-| Languages | Korean(Native), English(Intermediate)                    |
+|           |                                       |
+| --------- | ------------------------------------- |
+| Name      | Yuchan Jeong                          |
+| Work      | WithBecon(FE Developer)               |
+| Languages | Korean(Native), English(Intermediate) |
 
 ### 👇 Follow me on
 
