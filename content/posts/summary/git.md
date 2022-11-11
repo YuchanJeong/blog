@@ -66,7 +66,7 @@ set t_Co=256         " 색 조정
 <div markdown="1">
 
 ```text
-
+[type] content
 # ----------
 # [add] 기능 추가 / e.g. [add] 로그인 기능 추가: 자체 로그인, Kakao 소셜 로그인
 # [delete] 기능 삭제 / e.g. [delete] Kakao 소셜 로그인 기능 삭제
@@ -77,7 +77,8 @@ set t_Co=256         " 색 조정
 # [setting] 설치 및 설정 / e.g. [setting] 리덕스 설치 및 초기 설정
 # [style] 스타일 관련 작업 / e.g. [style] 자체 로그인 페이지 스타일 적용
 # [docs] 문서 관련 작업 / e.g. [docs] README.md 수정
-# [test] 테스트 관련 작업 / e.g. [test] 결제 기능 테스트용 코드
+# [temp] 테스트 관련 임시 작업 / e.g. [temp] 결제 기능 확인용 임시 코드 추가
+# [test] 테스트 코드 / e.g. [test] 결제 기능 테스트 코드 추가
 # [chore] 기타 작업 / e.g. [chore] 빌드파일 수정
 # ----------
 # 개조식으로 작성
@@ -86,7 +87,8 @@ set t_Co=256         " 색 조정
 # 내용이 여러 줄일 때는 "-"로 구분
 # ----------
 # "... 추가"는 [add], "...에 ... 추가"는 [update]
-# 리팩토링 등의 중요한 변경이 아닌 [modify]는 "단순" 키워드 사용
+# 살펴볼 필요가 없는 [modify]에는 "단순" 키워드 사용
+# [hotfix], [i18n], [refactor] 등 분류가 명확한 커스텀 태그 사용 가능
 ```
 
 </div>
