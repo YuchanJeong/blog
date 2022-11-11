@@ -77,8 +77,8 @@ set t_Co=256         " 색 조정
 # [setting] 설치 및 설정 / e.g. [setting] 리덕스 설치 및 초기 설정
 # [style] 스타일 관련 작업 / e.g. [style] 자체 로그인 페이지 스타일 적용
 # [docs] 문서 관련 작업 / e.g. [docs] README.md 수정
-# [temp] 테스트 관련 임시 작업 / e.g. [temp] 결제 기능 확인용 임시 코드 추가
 # [test] 테스트 코드 / e.g. [test] 결제 기능 테스트 코드 추가
+# [temp] 테스트 관련 임시 작업 / e.g. [temp] 결제 기능 확인용 임시 코드 추가
 # [chore] 기타 작업 / e.g. [chore] 빌드파일 수정
 # ----------
 # 개조식으로 작성
