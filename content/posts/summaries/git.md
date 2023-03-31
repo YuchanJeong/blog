@@ -2,7 +2,7 @@
 title: "Git"
 date: 2022-10-30
 categories:
-  - <summary>
+  - \summaries
 tags:
   - git
 ---
@@ -56,39 +56,6 @@ set history=1000     " vi 편집기록 기억갯수 .viminfo에 기록
 highlight Comment term=bold cterm=bold ctermfg=4 " 코멘트 하이라이트
 set mouse=a          " vim에서 마우스 사용
 set t_Co=256         " 색 조정
-```
-
-</div>
-</details>
-
-<details>
-<summary>.gitmessage.txt</summary>
-<div markdown="1">
-
-```text
-[type] content
-# ----------
-# [add] 기능 추가 / e.g. [add] 로그인 기능 추가: 자체 로그인, Kakao 소셜 로그인
-# [delete] 기능 삭제 / e.g. [delete] Kakao 소셜 로그인 기능 삭제
-# [update] 기능 개선 / e.g. [update] 자체 로그인에 성별 입력 추가
-# [change] 기능 변경 / e.g. [change] 로그인 유효성 검사 조건 변경
-# [modify] 기능 변경 없는 코드 변경 / e.g. [modify] 단순 주석 및 변수명 변경
-# [fix] 문제 해결 / e.g. [fix] 비밀번호 대소문자 미구분 문제 해결
-# [setting] 설치 및 설정 / e.g. [setting] 리덕스 설치 및 초기 설정
-# [style] 스타일 관련 작업 / e.g. [style] 자체 로그인 페이지 스타일 적용
-# [docs] 문서 관련 작업 / e.g. [docs] README.md 수정
-# [test] 테스트 코드 / e.g. [test] 결제 기능 테스트 코드 추가
-# [temp] 테스트 관련 임시 작업 / e.g. [temp] 결제 기능 확인용 임시 코드 추가
-# [chore] 기타 작업 / e.g. [chore] 빌드파일 수정
-# ----------
-# 개조식으로 작성
-# "어떻게"가 아닌 "무엇"을 설명, 필요할 경우 "왜"도 설명
-# 내용이 필요할 경우 제목에서 한 줄 띄우고 작성
-# 내용이 여러 줄일 때는 "-"로 구분
-# ----------
-# "... 추가"는 [add], "...에 ... 추가"는 [update]
-# 살펴볼 필요가 없는 [modify]에는 "단순" 키워드 사용
-# [hotfix], [i18n], [refactor] 등 분류가 명확한 커스텀 태그 사용 가능
 ```
 
 </div>
