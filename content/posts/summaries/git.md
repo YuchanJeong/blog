@@ -1,6 +1,6 @@
 ---
 title: "Git"
-date: 2022-10-30
+showDate: false
 categories:
   - \summaries
 tags:
