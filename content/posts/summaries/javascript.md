@@ -559,12 +559,14 @@ tags:
 
 1.  Timer Function(타이머 함수)
 
-    | Type                  | Details                   |
-    | --------------------- | ------------------------- |
-    | setTimeout(함수, ms)  | 일정 시간 후 함수 실핼    |
-    | setInterval(함수, ms) | 일정 시간 마다 함수 실행  |
-    | clearTimeout(변수)    | 해당 Timeout 함수를 종료  |
-    | clearInterval(변수)   | 해당 Interval 함수를 종료 |
+    | Type                   | Details                                                |
+    | ---------------------- | ------------------------------------------------------ |
+    | setImmediate(콜백)     | 즉시 함수 실행<br/>_\*setTimeout(콜백, 0) 사용은 지양_ |
+    | setTimeout(콜백, ms)   | 일정 시간 후 함수 실행                                 |
+    | setInterval(콜백, ms)  | 일정 시간 마다 함수 실행                               |
+    | clearImmediate(타이머) | 해당 Immediate 함수를 종료                             |
+    | clearTimeout(타이머)   | 해당 Timeout 함수를 종료                               |
+    | clearInterval(타이머)  | 해당 Interval 함수를 종료                              |
 
 2.  Callback Function(콜백 함수)
 
