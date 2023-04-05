@@ -21,19 +21,16 @@ tags:
 | null      | 의도적으로 비움                                                                                                                                                                                                                                                                                                         |
 | undefined | 값이 할당되지 않음                                                                                                                                                                                                                                                                                                      |
 
-\*falsy
-
-- false, null, undefined, "", 0, NaN (나머지는 truthy)
-
-\*[typeof](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/typeof)
-
-- 평가 전 데이터 타입을 string으로 반환
-- function은 "function"
-- undeclared variable은 "undefined"
-- null과 array는 "object"
-  - null은 data === null로 판단
-  - array는 Array.isArray(data)로 판단
-- NaN은 isNaN(number)으로 판단
+- falsy
+  - false, null, undefined, "", 0, NaN (나머지는 truthy)
+- [typeof](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/typeof)
+  - 평가 전 데이터 타입을 string으로 반환
+  - function은 "function"
+  - undeclared variable은 "undefined"
+  - null과 array는 "object"
+    - null은 data === null로 판단
+    - array는 Array.isArray(data)로 판단
+  - NaN은 isNaN(number)으로 판단
 
 ### 2. Properties & Methods
 
@@ -641,27 +638,55 @@ tags:
 ## JS Class
 
 ```js
+class 클래스 {
+  constructor() {}
+}
+
+class 하위_클래스 extends 상위_클래스 {
+  constructor() {
+    super();
+  }
+}
+
+const 인스턴스 = new 클래스();
+```
+
+- `static` : 클래스에서만 참조 및 호출 가능
+- `#` : 내부에서만 참조 및 호출 가능
+
+<details>
+<summary>example</summary>
+<div markdown=1>
+
+```js
 /* 1) 클래스 */
 class Vehicle {
-  //# constructor: 클래스의 파라미터
+  //constructor: 클래스의 파라미터
   constructor(name, wheel) {
     this.name = name;
     this.wheel = wheel;
   }
 
-  //# static property: 클래스에서 참조 가능한 프로퍼티
+  //static
   static hi = "hi";
 
-  //# static method: 클래스에서 호출 가능한 메서드
   static isVehicle(vehicle) {
     return vehicle instanceof Vehicle;
   }
 
-  //# (public) property: 내부 및 인스턴스 참조 가능한 프로퍼티
-  bye: "bye";
+  //private
+  #private = "private";
 
-  //# (public) method: 내부 및 인스턴스에서 호출 가능한 메서드
+  #saySecret() {
+    console.log(this.#private);
+  }
+
+  //property
+  bye = "bye";
+
+  //method
   beep() {
+    this.#saySecret();
     console.log("beep!");
   }
 }
@@ -669,21 +694,21 @@ class Vehicle {
 /* 2) 클래스 상속 */
 class Car extends Vehicle {
   constructor(name, wheel, year) {
-    //# super-1: 상위 클래스의 파라미터
+    //super: 상위 클래스의 파라미터
     super(name, wheel);
     this.year = year;
   }
 
   getWheel() {
-    //# super-2: 상위 클래스의 메서드
-    super.beep();
+    this.beep();
+    console.log(`bye: ${this.bye}`);
     console.log(`wheel: ${this.wheel}`);
   }
 }
 
 /* 3) prototype */
-// 공통 메서드 함수는 생성자의 prototype에 할당해서 메모리 절약
-// Prototype chain : 해당 객체 -> 생성자 -> 상위 생성자 -> Object
+// 공통 메서드 함수는 생성자의 prototype에 할당해서 메모리 절약 가능
+// prototype chain : 해당 객체 -> 생성자 -> 상위 생성자 -> Object
 Vehicle.prototype.getInfo = function () {
   console.log(`${this.name}(${this.year})`);
 };
@@ -698,17 +723,42 @@ Vehicle.hi; // "hi"
 Vehicle.isVehicle(myCar); // true
 
 myCar.bye; // "bye"
-myCar.beep; // -> beep!
-myCar.getWheel(); // -> beep! -> wheel: 4
+myCar.beep; // -> private -> beep!
+myCar.getWheel(); // -> private -> beep! -> wheel: 4
 myCar.getInfo(); // -> 벤츠(2016)
 yourCar.getInfo(); // -> BMW(2020)
 ```
 
+</div>
+</details>
+
 ## JS Asynchronous
 
-{{< alert "circle-info" >}}
-추가 예정
-{{< /alert >}}
+**1) Promise**
+
+- 실행은 되지었지만 아직 결과를 반환하지 않은 객체
+- resolve는 성공값으로 `then`으로 연결
+- reject는 실패값으로 `catch`로 연결
+- `finally`는 마지막에 무조건 실행
+- Promise changing
+  - then에서 반환한 값이 다음 then으로 넘어감
+  - 반환값이 프로미스면 resolve 후 넘어감
+  - 에러는 catch에서 한 번에 처리
+- 여러 프로미스 동시 실행
+  - `Promise.all([promise, ...])`
+    - 하나라도 실패하면 catch로 이동
+    - 각 결과는 배열에 담겨서 반환
+  - `Promise.allSettled([promise, ...])`
+    - 실패가 있어도 catch로 이동하지 않음
+    - 각 결과는 status 프로퍼티를 가지고 status가 fulfilled인 경우 value 프로퍼티, rejected인 경우 reason 프로퍼티를 가짐
+
+**2) async/await**
+
+- 프로미스 앞에 await을 붙히면, 해당 프로미스가 resolve될 때까지 기다린 뒤 다음 로직으로 넘어감
+- async 함수 내에서만 await 사용 가능
+- async 함수는 항상 프로미스 반환
+- try/catch로 에러 처리
+- `for await (promise of [promise, ...])`으로 반복 가능
 
 ## JS Etc
 
@@ -878,3 +928,25 @@ import * as 임의_객체명 from "경로";
 
   - 탭이나 브라우저가 종료되면 삭제
   - 같은 도메인이라도 다른 탭이나 브라우저면 공유 불가능
+
+### 7. Map & Set
+
+- Map
+  - 객체와 유사한 자료구조
+  - `for (const [key, value] of map)`
+- Set
+  - 배열과 유사한 자료구조
+  - 중복 요소를 가질 수 없음
+  - const newArr = [...new Set(arr)]로 배열의 중복 제거 가능
+  - `for (const item of set)`
+
+| Properties & Methods | Type    | Details                                      |
+| -------------------- | ------- | -------------------------------------------- |
+| .size                | map&set | 속성/요소의 갯수                             |
+| .set(key, value)     | map     | 속성 추가, 문자열이 아닌 값도 키로 사용 가능 |
+| .get(key)            | map     | 속성 조회                                    |
+| .add(item)           | set     | 요소 추가                                    |
+| .has(key/item)       | map&set | 해당 속성/요소 존재 여부 확인                |
+| .delete(key/item)    | map&set | 해당 속성/요소 삭제                          |
+| .clear()             | map&set | 모든 속성/요소 삭제                          |
+| .forEach()           | map&set | 모든 속성/요소 삭제                          |
