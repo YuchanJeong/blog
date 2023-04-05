@@ -932,21 +932,58 @@ import * as 임의_객체명 from "경로";
 ### 7. Map & Set
 
 - Map
+
   - 객체와 유사한 자료구조
+  - symbol이나 string이 아닌 key 사용 가능
   - `for (const [key, value] of map)`
+  - WeakMap
+
+    - WeakMap의 key 외에 참조가 없는 객체를 가비지 컬렉팅의 대상으로 만듦
+    - 원시형 데이터를 key로 사용 못함
+    - 반복작업 및 반복자 객체 반환 메서드를 사용 못함
+    - <details>
+      <summary>example</summary>
+      <div markdown=1>
+
+      ```js
+      let user = { name: "adw", age: 29 };
+
+      const userMap = new Map();
+      const userWeakMap = new WeakMap();
+
+      userMap.set(user, { married: false });
+      userWeakMap.set(user, { married: false });
+
+      user = null;
+
+      console.log(user); // -> null
+
+      console.log(userMap.get(user)); // -> undefined
+      console.log(userMap.size); // -> 1
+
+      console.log(userWeakMap.get(user)); // -> undefined
+      console.log(userWeakMap.size); // -> undefined
+      ```
+
+      </div>
+      </details>
+
 - Set
   - 배열과 유사한 자료구조
   - 중복 요소를 가질 수 없음
   - const newArr = [...new Set(arr)]로 배열의 중복 제거 가능
   - `for (const item of set)`
 
-| Properties & Methods | Type    | Details                                      |
-| -------------------- | ------- | -------------------------------------------- |
-| .size                | map&set | 속성/요소의 갯수                             |
-| .set(key, value)     | map     | 속성 추가, 문자열이 아닌 값도 키로 사용 가능 |
-| .get(key)            | map     | 속성 조회                                    |
-| .add(item)           | set     | 요소 추가                                    |
-| .has(key/item)       | map&set | 해당 속성/요소 존재 여부 확인                |
-| .delete(key/item)    | map&set | 해당 속성/요소 삭제                          |
-| .clear()             | map&set | 모든 속성/요소 삭제                          |
-| .forEach()           | map&set | 모든 속성/요소 삭제                          |
+| Properties & Methods | Type     | Details                                                               |
+| -------------------- | -------- | --------------------------------------------------------------------- |
+| .size                | map, set | 속성/요소의 갯수                                                      |
+| .set(key, value)     | map      | 속성 추가, 문자열이 아닌 값도 키로 사용 가능                          |
+| .get(key)            | map      | 속성 조회                                                             |
+| .add(item)           | set      | 요소 추가                                                             |
+| .has(key/item)       | map, set | 해당 속성/요소 존재 여부 확인                                         |
+| .delete(key/item)    | map, set | 해당 속성/요소 삭제                                                   |
+| .clear()             | map, set | 모든 속성/요소 삭제                                                   |
+| .forEach()           | map, set | 모든 속성/요소 삭제                                                   |
+| .keys()              | map      | key를 삽입한 순서대로 가지고 있는 iterator(반복자 객체) 반환          |
+| .values()            | map      | value를 삽입한 순서대로 가지고 있는 iterator(반복자 객체) 반환        |
+| .entries()           | map      | [key, value]를 삽입한 순서대로 가지고 있는 iterator(반복자 객체) 반환 |
