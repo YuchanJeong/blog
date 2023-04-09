@@ -140,6 +140,7 @@ set t_Co=256         " 색 조정
 | git branch -m [branch] [branch] | 브랜치명 바꾸기                              |
 | git checkout [branch]           | 브랜치 전환                                  |
 | git checkout -b [branch]        | 브랜치 생성 후 전환                          |
+| git checkout -t [branch]        | 원격 브랜치 가져오기 후 전환                 |
 | git merge [branch] (\-\-squash) | 현재 브랜치에 해당 브랜치 병합 (스쿼시 병합) |
 | git rebase [branch]             | 현재 브랜치에 해당 브랜치 이어 붙이기        |
 
